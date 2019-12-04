@@ -84,7 +84,6 @@ function getInfo(name:string,age:number):string{
 }
 getInfo('zgangds',212)
 
-
 let getInfo2=function(name:string,age:number):string{
     return  `${name}++${age}`
 }
@@ -168,3 +167,31 @@ const dog = new Dog();
 dog.bark();//继承dog构造函数里面的bark()方法
 dog.move(10);//继承dog构造函数里面继承的move()方法
 dog.bark();//继承dog构造函数里面的方法
+
+
+// 类里面的修饰符  三种修饰符 公共，私有与受保护的  public  private protected
+
+// plugin  公有  类里面有他的子类  类外面都可以访问
+// private 保护类型 任务里面 子类里面可以访问
+// protected  私有   类里面可以访问  子类和类外面都无法访问
+class Person {
+    protected name: string;
+    constructor(name: string) { this.name = name; }
+}
+
+class Employee extends Person {
+    private department: string;
+
+    constructor(name: string, department: string) {
+        super(name)
+        this.department = department;
+    }
+
+    public getElevatorPitch() {
+        return `Hello, my name is ${this.name} and I work in ${this.department}.`;
+    }
+}
+
+let howard = new Employee("Howard", "Sales");
+console.log(howard.getElevatorPitch());
+// console.log(howard.name); // 错误
