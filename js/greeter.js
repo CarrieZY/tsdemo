@@ -168,28 +168,8 @@ var dog = new Dog();
 dog.bark(); //继承dog构造函数里面的bark()方法
 dog.move(10); //继承dog构造函数里面继承的move()方法
 dog.bark(); //继承dog构造函数里面的方法
-// 类里面的修饰符  三种修饰符 公共，私有与受保护的  public  private protected
-// plugin  公有  类里面有他的子类  类外面都可以访问
-// private 保护类型 任务里面 子类里面可以访问
-// protected  私有   类里面可以访问  子类和类外面都无法访问
-var Person = /** @class */ (function () {
-    function Person(name) {
-        this.name = name;
-    }
-    return Person;
-}());
-var Employee = /** @class */ (function (_super) {
-    __extends(Employee, _super);
-    function Employee(name, department) {
-        var _this = _super.call(this, name) || this;
-        _this.department = department;
-        return _this;
-    }
-    Employee.prototype.getElevatorPitch = function () {
-        return "Hello, my name is " + this.name + " and I work in " + this.department + ".";
-    };
-    return Employee;
-}(Person));
-var howard = new Employee("Howard", "Sales");
-console.log(howard.getElevatorPitch());
-// console.log(howard.name); // 错误
+var wjk = {
+    tabdb: 'Tom',
+    age: 25
+};
+console.log(wjk);

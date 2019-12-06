@@ -174,24 +174,53 @@ dog.bark();//继承dog构造函数里面的方法
 // plugin  公有  类里面有他的子类  类外面都可以访问
 // private 保护类型 任务里面 子类里面可以访问
 // protected  私有   类里面可以访问  子类和类外面都无法访问
-class Person {
-    protected name: string;
-    constructor(name: string) { this.name = name; }
-}
+// class Person {
+//     protected name: string;
+//     constructor(name: string) { this.name = name; }
+// }
 
-class Employee extends Person {
-    private department: string;
+// class Employee extends Person {
+//     private department: string;
 
-    constructor(name: string, department: string) {
-        super(name)
-        this.department = department;
-    }
+//     constructor(name: string, department: string) {
+//         super(name)
+//         this.department = department;
+//     }
 
-    public getElevatorPitch() {
-        return `Hello, my name is ${this.name} and I work in ${this.department}.`;
-    }
-}
+//     public getElevatorPitch() {
+//         return `Hello, my name is ${this.name} and I work in ${this.department}.`;
+//     }
+// }
 
-let howard = new Employee("Howard", "Sales");
-console.log(howard.getElevatorPitch());
+// let howard = new Employee("Howard", "Sales");
+// console.log(howard.getElevatorPitch());
 // console.log(howard.name); // 错误
+
+
+// 接口
+// typescript是通过
+interface Person {
+    tabdb: string;
+    age?: number;
+}
+
+var wjk:Person = {
+    tabdb: 'Tom',
+    age: 25
+};
+
+console.log(wjk)
+// 有时候我们希望可以在接口允许有任意的属性，可以使用如下方式：[propName: string]: any;
+// 表示接口的第三个属性可以是任意值
+interface Person2 {
+    tabdb: string;
+    age?: number;
+    [propName: string]: any;
+}
+
+// 可以在接口的属性前面加上readonly  将接口里面指定的属性变成只读属性
+interface Person3 {
+    readonly tabdb: string;
+    age?: number;
+    [propName: string]: any;
+}
